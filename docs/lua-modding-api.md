@@ -6,7 +6,7 @@ native module, `dofile`, or `loadfile` access is available.
 
 ---
 
-## 1. Mod Structure
+## 1. Mod Structure {#mod-structure}
 
 ```
 mods/
@@ -50,7 +50,7 @@ mods/
 
 ---
 
-## 2. Permissions
+## 2. Permissions {#permissions}
 
 Mods declare requested permissions in `manifest.json`. Non-sensitive permissions are granted
 automatically. The following are **denied by default** and require explicit approval in
@@ -99,7 +99,7 @@ automatically. The following are **denied by default** and require explicit appr
 
 ---
 
-## 3. Lifecycle & Hot Reload
+## 3. Lifecycle & Hot Reload {#lifecycle-hot-reload}
 
 ```lua
 function on_load()
@@ -124,7 +124,7 @@ registrations are removed. Protocol translator mods cannot reload while connecte
 
 ---
 
-## 4. Mod Configuration
+## 4. Mod Configuration {#mod-configuration}
 
 Mods declare settings with `game.config.define()`. Values are persisted to
 `mods/<mod_id>/config.json`.
@@ -178,7 +178,7 @@ local strength = config.get("strength")
 
 ---
 
-## 5. Event System
+## 5. Event System {#event-system}
 
 ```lua
 -- Simple subscription (priority 0)
@@ -229,7 +229,7 @@ Priorities run highest-to-lowest (-10000 to 10000):
 
 ---
 
-## 6. Client API (`game.client`)
+## 6. Client API (`game.client`) {#client-api}
 
 Requires: `client.read` (read functions) or `client.modify` (modify functions). Each set is
 installed independently.
@@ -298,7 +298,7 @@ All overrides are applied per-mod in load order; the last enabled mod wins for e
 
 ---
 
-## 7. Player API (`game.player`)
+## 7. Player API (`game.player`) {#player-api}
 
 Requires: `client.read`
 
@@ -341,7 +341,7 @@ local vit = game.player.vitals()       -- { health, food, ... }
 
 ---
 
-## 8. Input API (`game.input`)
+## 8. Input API (`game.input`) {#input-api}
 
 Requires: `input.observe`
 
@@ -391,7 +391,7 @@ Requires: `input.observe`
 
 ---
 
-## 9. UI API (`game.ui`)
+## 9. UI API (`game.ui`) {#ui-api}
 
 Requires: `ui.read` (snapshot) and/or `ui.modify` (commands).
 
@@ -432,7 +432,7 @@ game.ui.set_crosshair_visible(false)
 
 ---
 
-## 10. World API (`game.world`)
+## 10. World API (`game.world`) {#world-api}
 
 Requires: `client.read`
 
@@ -461,7 +461,7 @@ Entity kind names are snake_case, e.g. `"zombie"`, `"cave_spider"`, `"xp_orb"`, 
 
 ---
 
-## 11. Network API (`game.network`)
+## 11. Network API (`game.network`) {#network-api}
 
 ### Packet observation (`network.observe`)
 
@@ -554,7 +554,7 @@ end)
 
 ---
 
-## 12. Protocol Translators (`game.protocol`)
+## 12. Protocol Translators (`game.protocol`) {#protocol-translators}
 
 Requires: `protocol.translate` (sensitive — must be approved in `permissions.json`)
 
@@ -600,7 +600,7 @@ game.protocol.register_translator({
 
 ---
 
-## 13. First-Person Animation API
+## 13. First-Person Animation API {#first-person-animation}
 
 ### Events
 
@@ -661,7 +661,7 @@ event.transform:rotate_y(45)         -- model'' = rotate * translate * model
 
 ---
 
-## 14. HUD Drawing API (`event.draw`)
+## 14. HUD Drawing API (`event.draw`) {#hud-drawing}
 
 Requires: `render.custom_draw`
 
@@ -729,7 +729,7 @@ end)
 
 ---
 
-## 15. Render Events
+## 15. Render Events {#render-events}
 
 | Event | Permission | Description |
 |-------|-----------|-------------|
@@ -750,7 +750,7 @@ The `render.hand.transform` event provides `event.transform` for hand mesh modif
 
 ---
 
-## 16. Resources API (`game.resources`)
+## 16. Resources API (`game.resources`) {#resources-api}
 
 Requires: `resources.read` and/or `resources.register`
 
@@ -775,7 +775,7 @@ Limits:
 
 ---
 
-## 17. Storage API (`game.storage`)
+## 17. Storage API (`game.storage`) {#storage-api}
 
 Requires: `storage.read` and/or `storage.write`
 
@@ -814,7 +814,7 @@ game.storage.clear()
 
 ---
 
-## 18. Logging (`game.log`)
+## 18. Logging (`game.log`) {#logging}
 
 ```lua
 game.log.debug("Detailed debug information")
@@ -827,7 +827,7 @@ Output format: `[Lua/<LEVEL>/<mod_id>] message`
 
 ---
 
-## 19. Lifecycle Events
+## 19. Lifecycle Events {#lifecycle-events}
 
 | Event | When | Permission |
 |-------|------|------------|
@@ -841,7 +841,7 @@ end)
 
 ---
 
-## 20. Complete Event Reference
+## 20. Complete Event Reference {#event-reference}
 
 | Event | Data | Permission |
 |-------|------|------------|
@@ -871,7 +871,7 @@ end)
 
 ---
 
-## 21. Safety & Limitations
+## 21. Safety & Limitations {#safety-limitations}
 
 ### What Lua CAN do
 
@@ -913,7 +913,7 @@ end)
 
 ---
 
-## 22. Example: Complete Mod
+## 22. Example: Complete Mod {#complete-example}
 
 ```lua
 -- mods/example/scripts/client.lua
