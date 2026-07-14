@@ -757,7 +757,3 @@ game.events.on("animation.first_person.transform", {
     end
 })
 ```
-
----
-
-英文原文见 [English API Reference](../lua-modding-api.md)。

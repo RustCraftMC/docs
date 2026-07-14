@@ -10,10 +10,6 @@ hero:
     - theme: brand
       text: 中文文档
       link: /zh-cn/lua-modding-api
-    - theme: alt
-      text: English Documentation
-      link: /lua-modding-api
-
 features:
   - title: Lua 5.4
     details: Each mod runs in an isolated Lua 5.4 environment.

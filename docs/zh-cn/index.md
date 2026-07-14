@@ -9,10 +9,6 @@ hero:
     - theme: brand
       text: 阅读 API 文档
       link: /zh-cn/lua-modding-api
-    - theme: alt
-      text: English
-      link: /
-
 features:
   - title: Lua 5.4
     details: 每个模组都运行在相互隔离的 Lua 5.4 环境中。
