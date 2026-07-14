@@ -760,4 +760,4 @@ game.events.on("animation.first_person.transform", {
 
 ---
 
-英文原文见 [English API Reference](../en/lua-modding-api.md)。
+英文原文见 [English API Reference](../lua-modding-api.md)。

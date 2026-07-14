@@ -12,7 +12,7 @@ hero:
       link: /zh-cn/lua-modding-api
     - theme: alt
       text: English Documentation
-      link: /en/lua-modding-api
+      link: /lua-modding-api
 
 features:
   - title: Lua 5.4
