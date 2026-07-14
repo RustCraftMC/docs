@@ -8,8 +8,8 @@ hero:
   tagline: Build client-side Lua mods for RustCraft.
   actions:
     - theme: brand
-      text: 中文文档
-      link: /zh-cn/lua-modding-api
+      text: Read the API docs
+      link: /lua-modding-api
 features:
   - title: Lua 5.4
     details: Each mod runs in an isolated Lua 5.4 environment.
